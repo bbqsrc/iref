@@ -263,3 +263,9 @@ impl<'a> Hash for Iri<'a> {
 		self.as_iri_ref().hash(hasher)
 	}
 }
+
+impl<'a> AsRef<IriRef<'a>> for Iri<'a> {
+    fn as_ref(&self) -> &IriRef<'a> {
+        &self.0
+    }
+}
